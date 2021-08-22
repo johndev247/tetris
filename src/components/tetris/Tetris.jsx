@@ -242,7 +242,7 @@ const Tetris = () => {
           gameOver={gameOver}
           paused={pause}
         />
-        <a href="https://johndev247.herokuapp.com/">
+        <a target="blank" href="https://johndev247.herokuapp.com/">
           <LogoDiv>
             <Logo src={logo} />
           </LogoDiv>
