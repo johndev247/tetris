@@ -12,7 +12,6 @@ export const StyledButton = styled.button`
   background-color: #333;
   font-family: Pixel, sans-serif;
   font-size: 0.7rem;
-  outline: none;
   cursor: pointer;
   @media only screen and (max-width: 450px) {
     flex: 1 0 30px;

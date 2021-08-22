@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import Display from "../display/Display";
 import NextMino from "../nextmino/NextMino";
 import {OnSound} from "../buttons/OnSound";
@@ -53,6 +53,7 @@ const Tetris = () => {
     resetNextTetro
   );
 
+  const divRef = useRef();
   const [rows, setRows, score, setScore, level, setLevel] =
     useGameStatus(rowsCleared);
 
@@ -91,6 +92,7 @@ const Tetris = () => {
     setRows(0);
     setLevel(1);
     setPause(false);
+    divRef.current.focus();
   };
   const endGame = () => {
     setGameOver(true);
@@ -202,15 +204,23 @@ const Tetris = () => {
   const playGame = () => {
     setPause(false);
     setDropTime(500 / level);
+    divRef.current.focus();
   };
   const pauseGame = () => {
     setPause(true);
     setDropTime(null);
+    divRef.current.focus();
   };
 
-  const onGameSound = () => setMuted(false);
+  const onGameSound = () => {
+    setMuted(false);
+    divRef.current.focus();
+  };
 
-  const offGameSound = () => setMuted(true);
+  const offGameSound = () => {
+    setMuted(true);
+    divRef.current.focus();
+  };
 
   return (
     <StyledTetrisWrapper
@@ -218,6 +228,7 @@ const Tetris = () => {
       tabIndex="0"
       onKeyDown={(e) => move(e)}
       onKeyUp={keyUp}
+      ref={divRef}
     >
       <StyledTetris>
         <GameBoard
