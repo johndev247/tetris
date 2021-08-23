@@ -17,7 +17,9 @@ export const StyledDisplay = styled.div`
   line-height: 15px;
   @media only screen and (max-width: 450px) {
     flex: 1 0 30px;
-    margin: 0 0 5px 0;
+    margin: 0;
+    max-height: 50px;
+    font-size: 0.3;
   }
 `;
 

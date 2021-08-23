@@ -7,7 +7,7 @@ export const StyledNextGameBoard = styled.div`
   grid-gap: 1px;
   width: 30%;
   background: #111;
-  margin: 0.3em 0 0.2em 1em;
+  margin: 0.7em 0 0.2em 1em;
   @media only screen and (max-width: 450px) {
     flex: 1 0 30px;
   }
@@ -25,13 +25,13 @@ export const StyledTetrisWrapper = styled.div`
 
 export const NextTetroTitle = styled.h4`
   color: #fff;
-  margin: 0.15em 0 0 4px;
+  margin: 0.15em 0 0 20px;
   font-family: Pixel, sans-serif;
   font-size: 0.8em;
   @media only screen and (max-width: 450px) {
     position: absolute;
-    top: 0;
-    left: 6%;
+    top: 3px;
+    left: 3%;
   }
 `;
 
@@ -40,11 +40,14 @@ export const LogoDiv = styled.div`
     content: "Johndev247";
     color: #fff;
     position: absolute;
-    top: 10px;
+    top: 35px;
     right: 55px;
+    @media only screen and (max-height: 660px) {
+      display: none;
+    }
   }
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
 
   @media only screen and (min-width: 768px) {

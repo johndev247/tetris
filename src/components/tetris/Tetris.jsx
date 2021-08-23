@@ -97,6 +97,7 @@ const Tetris = () => {
   const endGame = () => {
     setGameOver(true);
     setDropTime(null);
+    setPause(false);
     setBoard(createGameBoard());
     setTimeout(() => {
       setGameOver(false);
@@ -242,15 +243,10 @@ const Tetris = () => {
           gameOver={gameOver}
           paused={pause}
         />
-        <a target="blank" href="https://johndev247.herokuapp.com/">
-          <LogoDiv>
-            <Logo src={logo} />
-          </LogoDiv>
-        </a>
         <aside>
           {gameOver ? (
             <>
-              <audio src={over} autoPlay />
+              <audio src={over} autoPlay muted={muted} />
               (
               <Display gameOver={gameOver} text="Game Over" />){" "}
             </>
@@ -262,7 +258,7 @@ const Tetris = () => {
               <Display text={`Score: ${score}`} />
               <Display text={`Row: ${rows}`} />
               <Display text={`Level: ${level}`} />
-              <Display text={`Highest Score: ${highestScore}`} />
+              <Display text={`High Score: ${highestScore}`} />
 
               {muted ? (
                 <OnSound callback={onGameSound} />
@@ -306,6 +302,11 @@ const Tetris = () => {
             </>
           )}
         </aside>
+        <a target="blank" href="https://johndev247.herokuapp.com/">
+          <LogoDiv>
+            <Logo src={logo} />
+          </LogoDiv>
+        </a>
       </StyledTetris>
     </StyledTetrisWrapper>
   );

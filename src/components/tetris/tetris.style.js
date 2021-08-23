@@ -6,8 +6,13 @@ export const StyledTetrisWrapper = styled.div`
   justify-content: center;
   align-self: center;
   width: 100vw;
-  height: 100vh;
-  background-color: #080a0f;
+  height: 95vh;
+  @media only screen and (max-height: 670px) {
+    height: 97vh;
+  }
+  @media only screen and (max-height: 640px) {
+    height: 100vh;
+  }
 `;
 
 export const StyledTetris = styled.div`
@@ -18,7 +23,7 @@ export const StyledTetris = styled.div`
   padding: 40px;
   margin: 0 auto;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
   @media only screen and (max-width: 450px) {
     display: flex;
     flex-flow: row;
@@ -28,10 +33,10 @@ export const StyledTetris = styled.div`
     padding: 5px;
   }
   @media only screen and (min-height: 730px) {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
   }
   @media only screen and (min-height: 800px) {
-    margin-bottom: 8em;
+    margin-bottom: 6em;
   }
   aside {
     display: flex;
@@ -43,11 +48,11 @@ export const StyledTetris = styled.div`
 
     @media only screen and (max-width: 450px) {
       position: absolute;
-      top: 20px;
+      top: 0;
       display: flex;
       flex-flow: row;
       flex-wrap: wrap;
-      width: 270px;
+      width: 100%;
       padding-top: 0.5em;
     }
   }

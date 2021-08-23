@@ -15,6 +15,9 @@ export const StyledButton = styled.button`
   cursor: pointer;
   @media only screen and (max-width: 450px) {
     flex: 1 0 30px;
-    margin: 0 0 5px 0;
+    margin: 0;
+    font-size: 0.6rem;
+    max-height: 32px;
+    line-height: 13px;
   }
 `;
